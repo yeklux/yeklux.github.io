@@ -16,7 +16,9 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="استودیو یک‌لوکس | عکاسی و مدلینگ هوش مصنوعی">
 <meta property="og:description" content="شات‌های ژورنالی و تبلیغاتی استاندارد جهانی تنها با یک عکس ساده گوشی.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85">
+
+<!-- [۱. عکس پیش‌نمایش اشتراک‌گذاری در شبکه‌های اجتماعی] -->
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yeklux/assets@main/images/og-cover.jpg">
 
 <!-- Schema.org JSON-LD (Rich Snippets) -->
 <script type="application/ld+json">
@@ -26,7 +28,7 @@
     {
       "@type": "ProfessionalService",
       "name": "یک‌لوکس | YekLux Studio",
-      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85",
+      "image": "https://cdn.jsdelivr.net/gh/yeklux/assets@main/images/logo.svg",
       "description": "استودیو هوشمند عکاسی تبلیغاتی، رتوش سینمایی و مدلینگ مجازی با استاندارد 8K",
       "priceRange": "$$"
     },
@@ -240,7 +242,7 @@ main { position: relative; z-index: 1; }
 }
 
 /* ==========================================================================
-   3. APPLE EDITORIAL HEADER (SAFE AREA COMPLIANT)
+   3. APPLE EDITORIAL HEADER & BRAND LOGO
    ========================================================================== */
 header {
   position: fixed;
@@ -276,24 +278,23 @@ header.scrolled .nav {
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-weight: 900;
   font-size: var(--fs-md);
   letter-spacing: -0.5px;
 }
 
-.brand-mark {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #ffffff, var(--gold));
-  color: #06080d;
-  font-weight: 900;
-  font-size: 0.85rem;
-  box-shadow: 0 4px 16px var(--gold-glow);
+/* استایل عکس لوگو برای بالاترین وضوح در رتینا */
+.brand-logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 10px var(--gold-glow));
+  transition: transform 0.3s ease;
+}
+
+.brand:hover .brand-logo-img {
+  transform: scale(1.08) rotate(-3deg);
 }
 
 .nav-links {
@@ -331,7 +332,7 @@ header.scrolled .nav {
 .nav-actions { display: flex; align-items: center; gap: 10px; }
 
 .nav-cta {
-  min-height: 44px; /* Apple 44pt Touch Rule */
+  min-height: 44px;
   padding: 10px clamp(16px, 2vw, 24px);
   border-radius: var(--radius-full);
   background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
@@ -354,7 +355,7 @@ header.scrolled .nav {
 
 .menu-toggle {
   display: none;
-  min-width: 44px; /* Apple 44pt Touch Target */
+  min-width: 44px;
   min-height: 44px;
   width: 44px;
   height: 44px;
@@ -407,7 +408,7 @@ header.scrolled .nav {
 }
 
 .mobile-nav-links a {
-  min-height: 52px; /* Apple Touch Target */
+  min-height: 52px;
   padding: 14px 18px;
   font-size: 1.05rem;
   font-weight: 700;
@@ -749,7 +750,7 @@ section { padding: var(--section-pad) 0; position: relative; }
   overflow: hidden;
   background: #000;
   cursor: ew-resize;
-  touch-action: pan-y; /* Crucial for effortless vertical mobile scrolling */
+  touch-action: pan-y;
 }
 
 .ba-stage:focus-visible {
@@ -808,7 +809,7 @@ section { padding: var(--section-pad) 0; position: relative; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 44px; /* Apple 44pt Touch Target */
+  width: 44px;
   height: 44px;
   border-radius: 50%;
   background: rgba(10, 14, 22, 0.95);
@@ -838,7 +839,7 @@ section { padding: var(--section-pad) 0; position: relative; }
   margin: 0 auto;
   padding: clamp(28px, 4vw, 54px);
   border-radius: var(--radius-lg);
-  background: linear-gradient(160deg, rgba(22, 28, 40, 0.5) 0%, rgba(8, 11, 17, 0.95) 100%);
+  background: linear-gradient(160deg, rgba(223, 183, 108, 0.05) 0%, rgba(8, 11, 17, 0.95) 100%);
   border: 1px solid rgba(223, 183, 108, 0.25);
 }
 
@@ -871,7 +872,7 @@ section { padding: var(--section-pad) 0; position: relative; }
 .roi-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 28px; /* Large touch target */
+  width: 28px;
   height: 28px;
   border-radius: 50%;
   background: linear-gradient(135deg, #ffffff, var(--gold));
@@ -941,7 +942,7 @@ section { padding: var(--section-pad) 0; position: relative; }
 
 .faq-trigger {
   width: 100%;
-  min-height: 52px; /* Apple 44pt+ rule */
+  min-height: 52px;
   padding: 18px 22px;
   display: flex;
   align-items: center;
@@ -1062,7 +1063,7 @@ section { padding: var(--section-pad) 0; position: relative; }
 .cta-monolith .btn-primary { font-size: var(--fs-base); padding: 16px 40px; }
 
 /* ==========================================================================
-   12. ULTRA-SMOOTH MODAL (HIG TOUCH OPTIMIZED)
+   12. ULTRA-SMOOTH MODAL
    ========================================================================== */
 .modal {
   position: fixed;
@@ -1114,7 +1115,6 @@ section { padding: var(--section-pad) 0; position: relative; }
   opacity: 1;
 }
 
-/* Apple 44pt Touch Target Close Button */
 .modal-close-btn {
   position: absolute;
   top: 14px;
@@ -1151,7 +1151,7 @@ section { padding: var(--section-pad) 0; position: relative; }
 .contact-channels-grid { display: flex; flex-direction: column; gap: 10px; }
 
 .contact-channel-item {
-  min-height: 52px; /* Apple Touch Target */
+  min-height: 52px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1265,8 +1265,17 @@ footer {
 <!-- HEADER -->
 <header>
   <div class="container nav">
-    <a class="brand" href="#" aria-label="یک‌لوکس - بازگشت به بالای صفحه">
-      <span class="brand-mark">YL</span>
+    <a class="brand" href="#" aria-label="یک‌لوکس - استودیو عکاسی تبلیغاتی هوش مصنوعی">
+      
+      <!-- ================= [۲. لوگوی سایت در هدر] ================= -->
+      <img 
+        src="https://cdn.jsdelivr.net/gh/yeklux/assets@main/images/logo.svg" 
+        alt="لوگوی استودیو یک‌لوکس" 
+        class="brand-logo-img"
+        width="36" 
+        height="36"
+        loading="eager"
+      >
       <span>یک‌لوکس</span>
     </a>
     
@@ -1342,12 +1351,13 @@ footer {
         </div>
       </div>
 
+      <!-- ================= [۳. عکس بزرگ بخش هیرو (کارت شناور)] ================= -->
       <div class="hero-visual-wrap" id="heroVisualWrap">
         <div class="hero-visual-card" id="heroCard">
           <picture>
-            <source srcset="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85" type="image/jpeg">
+            <source srcset="https://cdn.jsdelivr.net/gh/yeklux/assets@main/images/hero-portrait.jpg" type="image/jpeg">
             <img 
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85" 
+              src="https://cdn.jsdelivr.net/gh/yeklux/assets@main/images/hero-portrait.jpg" 
               alt="نمونه شات ژورنالی استودیو یک‌لوکس" 
               class="hero-visual-img"
               width="500"
@@ -1381,7 +1391,7 @@ footer {
         <div class="compare-card-title">
           <span>عکاسی سنتی</span>
           <span class="row-mark">
-            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
           </span>
         </div>
         <div class="compare-rows">
@@ -1434,7 +1444,7 @@ footer {
   </div>
 </section>
 
-<!-- 3. PORTFOLIO -->
+<!-- 3. PORTFOLIO (BEFORE & AFTER SLIDERS) -->
 <section id="portfolio">
   <div class="container">
     <div class="section-head">
@@ -1444,14 +1454,28 @@ footer {
     </div>
     
     <div class="portfolio-grid">
-      <!-- 1. Fashion -->
+      
+      <!-- ================= [۴. نمونه کار ۱: پوشاک و مد] ================= -->
       <div class="ba-card panel">
         <div class="ba-stage" data-pos="50" role="slider" tabindex="0" aria-label="مقایسه قبل و بعد پوشاک" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
-          <img class="ba-img" src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=900&q=80" alt="عکس خام اولیه مانتو" loading="lazy">
+          
+          <!-- عکس قبل (خام) نمونه ۱ -->
+          <img 
+            class="ba-img" 
+            src="https://cdn.jsdelivr.net/gh/yeklux/assets@main/images/portfolio-fashion-before.jpg" 
+            alt="عکس خام اولیه پوشاک" 
+            loading="lazy"
+          >
           <div class="ba-badge ba-badge-before">عکس ساده اولیه</div>
           
           <div class="ba-layer-after">
-            <img class="ba-img" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80" alt="خروجی ژورنالی یک‌لوکس مانتو" loading="lazy">
+            <!-- عکس بعد (خروجی نهایی یک‌لوکس) نمونه ۱ -->
+            <img 
+              class="ba-img" 
+              src="https://cdn.jsdelivr.net/gh/yeklux/assets@main/images/portfolio-fashion-after.jpg" 
+              alt="خروجی ژورنالی یک‌لوکس پوشاک" 
+              loading="lazy"
+            >
           </div>
           <div class="ba-badge ba-badge-after">خروجی یک‌لوکس</div>
 
@@ -1467,14 +1491,27 @@ footer {
         </div>
       </div>
 
-      <!-- 2. Personal Portrait -->
+      <!-- ================= [۵. نمونه کار ۲: پرتره و چهره] ================= -->
       <div class="ba-card panel">
         <div class="ba-stage" data-pos="50" role="slider" tabindex="0" aria-label="مقایسه قبل و بعد پرتره شخصی" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
-          <img class="ba-img" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80" alt="سلفی ساده با گوشی" loading="lazy">
+          
+          <!-- عکس قبل (خام) نمونه ۲ -->
+          <img 
+            class="ba-img" 
+            src="https://cdn.jsdelivr.net/gh/yeklux/assets@main/images/portfolio-portrait-before.jpg" 
+            alt="سلفی ساده با گوشی" 
+            loading="lazy"
+          >
           <div class="ba-badge ba-badge-before">عکس ساده با گوشی</div>
           
           <div class="ba-layer-after">
-            <img class="ba-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80" alt="پرتره سینمایی آتلیه‌ای" loading="lazy">
+            <!-- عکس بعد (خروجی نهایی یک‌لوکس) نمونه ۲ -->
+            <img 
+              class="ba-img" 
+              src="https://cdn.jsdelivr.net/gh/yeklux/assets@main/images/portfolio-portrait-after.jpg" 
+              alt="پرتره سینمایی آتلیه‌ای" 
+              loading="lazy"
+            >
           </div>
           <div class="ba-badge ba-badge-after">پرتره یک‌لوکس</div>
 
@@ -1490,14 +1527,27 @@ footer {
         </div>
       </div>
 
-      <!-- 3. Leather & Luxury -->
+      <!-- ================= [۶. نمونه کار ۳: محصولات لوکس و چرم] ================= -->
       <div class="ba-card panel">
         <div class="ba-stage" data-pos="50" role="slider" tabindex="0" aria-label="مقایسه قبل و بعد کالای لوکس" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
-          <img class="ba-img" src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=900&q=80" alt="عکس ساده کیف چرم" loading="lazy">
+          
+          <!-- عکس قبل (خام) نمونه ۳ -->
+          <img 
+            class="ba-img" 
+            src="https://cdn.jsdelivr.net/gh/yeklux/assets@main/images/portfolio-luxury-before.jpg" 
+            alt="عکس ساده اولیه محصول" 
+            loading="lazy"
+          >
           <div class="ba-badge ba-badge-before">عکس ساده اولیه</div>
           
           <div class="ba-layer-after">
-            <img class="ba-img" src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=900&q=80" alt="خروجی تیزری استودیویی کیف" loading="lazy">
+            <!-- عکس بعد (خروجی نهایی یک‌لوکس) نمونه ۳ -->
+            <img 
+              class="ba-img" 
+              src="https://cdn.jsdelivr.net/gh/yeklux/assets@main/images/portfolio-luxury-after.jpg" 
+              alt="خروجی تیزری استودیویی محصول" 
+              loading="lazy"
+            >
           </div>
           <div class="ba-badge ba-badge-after">خروجی یک‌لوکس</div>
 
@@ -1512,6 +1562,7 @@ footer {
           <p>صحنه‌پردازی استودیویی با حفظ بافت چرم طبیعی و شفافیت شیشه محصول.</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -1684,7 +1735,10 @@ footer {
     <h3 id="modalHeading">ارتباط با استودیو یک‌لوکس</h3>
     <p>جهت دریافت نمونه تستی رایگان، استعلام و ارسال عکس‌ها پیام دهید:</p>
 
+    <!-- ================= [۷. شبکه‌های اجتماعی و راه‌های تماس] ================= -->
     <div class="contact-channels-grid">
+      
+      <!-- لینک تلگرام -->
       <a href="https://t.me/your_telegram_id" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
         <span class="channel-title">ارسال پیام در تلگرام</span>
         <span class="channel-action">
@@ -1693,6 +1747,7 @@ footer {
         </span>
       </a>
 
+      <!-- شماره تماس تلفنی -->
       <a href="tel:09120000000" class="contact-channel-item">
         <span class="channel-title">تماس تلفنی مستقیم</span>
         <span class="channel-action">
@@ -1701,6 +1756,7 @@ footer {
         </span>
       </a>
 
+      <!-- لینک واتساپ (شماره با کد ۹۸ بدون مثبت) -->
       <a href="https://wa.me/989120000000" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
         <span class="channel-title">ارسال پیام در واتساپ</span>
         <span class="channel-action">
@@ -1709,13 +1765,15 @@ footer {
         </span>
       </a>
 
-      <a href="https://instagram.com/your_page" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
+      <!-- دایرکت اینستاگرام -->
+      <a href="https://instagram.com/your_instagram_id" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
         <span class="channel-title">دایرکت اینستاگرام</span>
         <span class="channel-action">
           <span>مشاهده</span>
           <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
         </span>
       </a>
+
     </div>
   </div>
 </div>
@@ -1725,7 +1783,6 @@ footer {
 (function() {
   'use strict';
 
-  // 0. Prevent Jump on Refresh + Smooth Page Load
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
   }
@@ -1734,7 +1791,6 @@ footer {
     document.body.classList.add('page-loaded');
   });
 
-  // 1. Precise Scroll Handler (Progress Bar + Header + Accurate Nav Spy)
   const header = document.querySelector('header');
   const progressBar = document.getElementById('scroll-progress');
   const navLinks = [...document.querySelectorAll('.nav-links a')];
@@ -1773,7 +1829,6 @@ footer {
   window.addEventListener('scroll', handleWindowScroll, { passive: true });
   handleWindowScroll();
 
-  // 2. Mobile Drawer
   const menuToggle = document.getElementById('menuToggle');
   const mobileDrawer = document.getElementById('mobileDrawer');
 
@@ -1801,7 +1856,6 @@ footer {
     });
   }
 
-  // 3. ZERO-JUMP ACCESSIBLE MODAL
   const contactModal = document.getElementById('contactModal');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
   let lastFocusedElement = null;
@@ -1830,7 +1884,6 @@ footer {
     });
   }
 
-  // Global Keyboard Listener
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       if (contactModal && contactModal.classList.contains('open')) closeContactModal();
@@ -1854,7 +1907,6 @@ footer {
     }
   });
 
-  // 4. BUTTERY-SMOOTH FINTECH ROI CALCULATOR TICKER ENGINE
   const shotSlider = document.getElementById('shotSlider');
   const costSlider = document.getElementById('costSlider');
   const shotCountLabel = document.getElementById('shotCountLabel');
@@ -1935,7 +1987,6 @@ footer {
     updateCalculator();
   }
 
-  // 5. Before/After Sliders (Touch & Pointer Perfect)
   function initBeforeAfterSliders() {
     document.querySelectorAll('.ba-stage').forEach(stage => {
       let isDragging = false;
@@ -1984,7 +2035,6 @@ footer {
     });
   }
 
-  // 6. FAQ Accordion
   document.querySelectorAll('.faq-trigger').forEach(trigger => {
     trigger.addEventListener('click', () => {
       const item = trigger.closest('.faq-item');
@@ -2003,7 +2053,6 @@ footer {
     });
   });
 
-  // 7. GLITCH-PROOF CONTINUOUS DAMPED TILT ENGINE (DESKTOP ONLY)
   const heroWrap = document.getElementById('heroVisualWrap');
   const heroCard = document.getElementById('heroCard');
 
@@ -2055,7 +2104,6 @@ footer {
     });
   }
 
-  // 8. Scroll Reveal
   document.querySelectorAll('.compare-card, .ba-card, .roi-box, .step-item, .cta-monolith, .faq-item').forEach(el => {
     el.classList.add('reveal');
   });
@@ -2071,7 +2119,6 @@ footer {
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // 9. Hardware-Accelerated Custom Cursor (Desktop Only)
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     document.body.classList.add('has-cursor');
     const dot = document.createElement('span');
@@ -2127,7 +2174,6 @@ footer {
     });
   }
 
-  // Safe Initialization
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initBeforeAfterSliders);
   } else {
