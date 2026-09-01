@@ -594,6 +594,14 @@ header.scrolled .nav {
   object-fit: cover;
   object-position: center top;
 }
+  
+  .hero-visual-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
 
 .hero-visual-overlay {
   position: absolute;
@@ -1354,17 +1362,22 @@ footer {
       <!-- ================= [۳. عکس بزرگ بخش هیرو (کارت شناور)] ================= -->
       <div class="hero-visual-wrap" id="heroVisualWrap">
         <div class="hero-visual-card" id="heroCard">
-          <picture>
-            <source srcset="https://cdn.jsdelivr.net/gh/yeklux/assets@main/images/hero-portrait.jpg" type="image/jpeg">
-            <img 
-              src="https://cdn.jsdelivr.net/gh/yeklux/assets@main/images/hero-portrait.jpg" 
-              alt="نمونه شات ژورنالی استودیو یک‌لوکس" 
-              class="hero-visual-img"
-              width="500"
-              height="625"
-              fetchpriority="high"
-            >
-          </picture>
+          <video
+  class="hero-visual-video"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata"
+  poster="https://cdn.jsdelivr.net/gh/yeklux/assets@main/images/hero-portrait.jpg"
+  aria-label="نمونه ویدیوی استودیو یک‌لوکس"
+>
+  <source
+    src="https://cdn.jsdelivr.net/gh/yeklux/assets@main/images/hero.mp4"
+    type="video/mp4"
+  >
+</video>
+
           <div class="hero-visual-overlay"></div>
           <div class="hero-visual-caption">
             <span>استودیو مجازی عکاسی و ادیت</span>
