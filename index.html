@@ -1370,28 +1370,23 @@ footer {
   preload="metadata"
   aria-label="نمونه ویدیوی استودیو یک‌لوکس"
 >
-  <source
-    src="https://cdn.jsdelivr.net/gh/yeklux/assets@main/images/hero-new.mp4" type="video/mp4">
-    type="video/mp4"
-  >
-</video>
-
 <script>
-  const video = document.querySelector('.hero-visual-video');
+const video = document.querySelector('.hero-visual-video');
 
-  const startTime = 1.23;
-  const endTime = 10;
+const startTime = 01:26;
+const endTime = 10:00;
 
-  video.addEventListener('loadedmetadata', () => {
-    video.currentTime = startTime;
-  });
+video.addEventListener('loadedmetadata', () => {
+  video.currentTime = startTime;
+  video.play();
+});
 
-  video.addEventListener('timeupdate', () => {
-    if (video.currentTime >= endTime) {
-      video.pause();
-      video.currentTime = endTime;
-    }
-  });
+video.addEventListener('timeupdate', () => {
+  if (video.currentTime >= endTime) {
+    video.pause();
+    video.currentTime = endTime;
+  }
+});
 </script>
 >
  <source src="https://cdn.jsdelivr.net/gh/yeklux/assets@main/images/hero-new.mp4" type="video/mp4">
